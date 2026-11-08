@@ -1,0 +1,368 @@
+import type { Project } from "@/types/site";
+
+export const projects: Project[] = [
+  {
+    slug: "cyepro",
+    number: "01",
+    name: "Cyepro",
+    kind: "Mobile · Production · B2B",
+    category: "mobile",
+    featured: true,
+    context: "Cyepro · Jul to Oct 2026",
+    status: "Live on the Google Play Store and the Apple App Store",
+    summary:
+      "A production Dealer Management System for the automobile industry, used by dealers and their customers.",
+    intro:
+      "Cyepro lets dealers and customers browse, evaluate and purchase vehicles end to end from one mobile app. I worked on it as a React Native developer, and it is live on the Google Play Store and the Apple App Store.",
+    image: "/images/project-cyepro.jpg",
+    imageAlt: "Pencil sketch of two phone screens, a vehicle list and a map route, beside a car.",
+    facts: [
+      { value: "40+", label: "feature modules" },
+      { value: "SDK 52", label: "Expo, managed workflow" },
+      { value: "5", label: "EAS build profiles" },
+      { value: "2", label: "stores, Android and iOS" },
+    ],
+    built: [
+      "40+ feature modules across authentication, dealership operations and customer-facing workflows.",
+      "React Native on Expo SDK 52: managed workflow, expo-dev-client, and EAS Build across five build profiles.",
+      "Firebase Authentication, Firebase Crashlytics for crash monitoring, and Firebase Cloud Messaging for real-time push notifications.",
+      "Location features with react-native-maps and expo-location, including background location tracking for field and vehicle use cases.",
+      "Media handling with expo-image-picker, expo-media-library and expo-av, and local persistence with expo-sqlite.",
+      "Over-the-air updates with expo-updates, so fixes reach production without resubmitting to the stores.",
+      "Custom deep-linking schemes for in-app navigation and third-party integration flows.",
+      "An initiative to bring end-to-end mobile automation testing, with Maestro, Detox and Appium, into a codebase that had none.",
+    ],
+    investigations: [
+      {
+        question: "Where should a notification take you?",
+        body: "A push notification is only half a feature. The other half is the screen it opens. I investigated how each kind of notification should navigate to its own destination, alongside custom deep-linking schemes for moving people to the right place inside the app.",
+      },
+      {
+        question: "How do you ship a fix without waiting for a store review?",
+        body: "Expo Updates sends JavaScript and asset changes straight to installed apps. With over-the-air updates configured, a production fix does not need a new store submission.",
+      },
+      {
+        question: "How do you test a codebase that has no tests?",
+        body: "I started an initiative to introduce end-to-end mobile automation with Maestro, Detox and Appium, aimed at making releases more reliable.",
+      },
+    ],
+    stack: [
+      "React Native",
+      "Expo SDK 52",
+      "EAS Build",
+      "Firebase Auth",
+      "Crashlytics",
+      "FCM",
+      "react-native-maps",
+      "expo-location",
+      "expo-sqlite",
+      "expo-updates",
+      "WebSockets",
+    ],
+    links: [],
+    note: { label: "Field note: how a notification finds a closed app", href: "/journal#notifications" },
+  },
+  {
+    slug: "smarthire",
+    number: "02",
+    name: "SmartHire",
+    kind: "AI · LLM · Autonomous agent",
+    category: "ai",
+    featured: true,
+    context: "Built solo · 2026",
+    status: "Live in production, running on a real schedule",
+    summary:
+      "An autonomous job-hunting platform. Every morning it finds live jobs, judges them against your resume, and emails the best five.",
+    intro:
+      "SmartHire wakes up at 8 AM, discovers live jobs, reads a resume, scores each job with an LLM, and delivers the five strongest matches by email, with a cover letter for the top match. I built it from scratch and it runs in production without anyone pressing a button.",
+    image: "/images/project-smarthire.jpg",
+    imageAlt: "Pencil sketch of an alarm clock at eight with a sunrise, an envelope, a magnifier over a resume and a network of nodes.",
+    facts: [
+      { value: "8 AM", label: "scheduled run, no human involved" },
+      { value: "Top 5", label: "matches emailed each morning" },
+      { value: "3", label: "verdicts: Apply, Consider, Skip" },
+      { value: "5", label: "tracking stages, Saved to Rejected" },
+    ],
+    built: [
+      "An autonomous agent that runs every morning at 8 AM, discovers live jobs through the JSearch API, evaluates them against the user's resume with Groq LLaMA 3.3, and emails the top five matches.",
+      "LLM-based semantic matching: the full job description is read against the resume to find matched skills, missing skills and an Apply, Consider or Skip recommendation.",
+      "An ATS resume analyzer that extracts text from uploaded PDFs and scores keywords, readability, formatting and skills alignment, with AI-written improvement suggestions.",
+      "Resume processing workflows covering PDF parsing, text extraction, content analysis, skill identification and AI-based scoring.",
+      "OTP email verification, JWT sessions, Cloudinary resume storage and a Saved, Applied, Interview, Offer, Rejected tracking pipeline.",
+      "A personalised cover letter for the number one match, delivered in the same email.",
+    ],
+    investigations: [
+      {
+        question: "Why not just count keywords?",
+        body: "A keyword match misses a strong job that describes the same work in different words. SmartHire gives the model the whole job description and the whole resume, and asks what actually fits and what is missing.",
+      },
+      {
+        question: "Is this automation, a pipeline or an agent?",
+        body: "An interviewer once asked me to explain the difference, and I could not do it cleanly. So I went back and worked it out. SmartHire has the shape I now look for: a scheduled trigger, an LLM making the judgement, and an action that reaches a real inbox.",
+      },
+    ],
+    stack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Python",
+      "Groq LLaMA 3.3",
+      "Gemini API",
+      "JSearch API",
+      "node-cron",
+      "Brevo",
+      "Cloudinary",
+      "Vercel",
+      "Render",
+    ],
+    links: [
+      { label: "Live site", href: "https://smart-hire-wine.vercel.app" },
+      { label: "Source on GitHub", href: "https://github.com/sigatapujahnavi/SmartHire" },
+    ],
+    note: { label: "Field note: automation, pipeline or agent?", href: "/journal#agents" },
+    howItWorks: "smarthire",
+  },
+  {
+    slug: "landstime",
+    number: "03",
+    name: "LandsTime",
+    kind: "Mobile · Real estate · Multilingual",
+    category: "mobile",
+    featured: true,
+    context: "Technoji Global · 2025 to 2026",
+    status: "Live on Android and iOS",
+    summary:
+      "A property discovery app searchable by place, in more than one language, with OTP sign-in and voice.",
+    intro:
+      "LandsTime is a property listing and discovery platform. People search for property by location, in multiple languages, sign in with an OTP, and can search by voice. It is live on Android and iOS.",
+    image: "/images/project-landstime.jpg",
+    imageAlt: "Pencil sketch of a folded map with location pins, a signpost and a phone with a route and microphone.",
+    facts: [
+      { value: "2", label: "platforms, Android and iOS" },
+      { value: "i18next", label: "for the interface language" },
+      { value: "Maps", label: "location-based search" },
+      { value: "OTP", label: "sign-in" },
+    ],
+    built: [
+      "Location-based property search using Google Maps and device location services.",
+      "Multi-language support across the app.",
+      "OTP authentication.",
+      "Voice integration for searching.",
+      "A Node.js backend with Firebase services, shipped to Android and iOS.",
+    ],
+    investigations: [
+      {
+        question: "Two kinds of text, two kinds of translation",
+        body: "The words built into the app never change, so they belong in translation files, which is what i18next is for. Property details arrive as data, so they have to be translated as they arrive, which is where Google Translate fits. I studied both before treating them as one problem.",
+      },
+      {
+        question: "How does a map know where I mean?",
+        body: "Location-based discovery meant studying Google Maps and geolocation together, so a search can start from where a person is, or from where they want to be.",
+      },
+    ],
+    stack: ["React Native", "Node.js", "Firebase", "Google Maps", "i18next", "Google Translate"],
+    links: [{ label: "landstime.com", href: "https://landstime.com/" }],
+  },
+  {
+    slug: "kroodl",
+    number: "04",
+    name: "Kroodl",
+    kind: "Mobile · Social · Real time",
+    category: "mobile",
+    context: "Technoji Global · 2025 to 2026",
+    status: "Live on the Play Store and the App Store",
+    summary: "A location-based social app: find people near you and talk to them in real time.",
+    intro:
+      "Kroodl is a location-based social networking app, live on the Play Store and the App Store. It finds people near you and connects you through real-time chat.",
+    image: "/images/project-kroodl.jpg",
+    imageAlt: "Pencil sketch of concentric proximity circles with people pins, linked to a phone showing chat bubbles.",
+    facts: [
+      { value: "2", label: "stores, Android and iOS" },
+      { value: "Redis", label: "caching layer" },
+      { value: "WebSockets", label: "live messaging" },
+      { value: "Maps", label: "proximity discovery" },
+    ],
+    built: [
+      "Real-time chat between people who find each other.",
+      "Proximity-based user discovery on Google Maps.",
+      "Redis caching to keep repeated lookups fast.",
+      "A React Native app with a Node.js backend.",
+    ],
+    investigations: [
+      {
+        question: "Two things that have to feel instant",
+        body: "Chat and nearby discovery both lose their point if they lag. WebSockets keep a live connection open for messages, Redis caching keeps repeated lookups quick, and Google Maps supplies the place data underneath.",
+      },
+    ],
+    stack: ["React Native", "Node.js", "Redis", "WebSockets", "Google Maps"],
+    links: [],
+  },
+  {
+    slug: "errand-learn-hub",
+    number: "05",
+    name: "Errand Learn Hub",
+    kind: "Web + Mobile · EdTech · DRM video",
+    category: "mobile",
+    context: "Technoji Global · 2025 to 2026",
+    status: "Live on web, Android and iOS",
+    summary: "An online learning platform on web, Android and iOS, with DRM-protected video.",
+    intro:
+      "Errand Learn Hub delivers courses on the web, Android and iOS. Its videos are protected with DRM through VdoCipher, and the whole thing is backed by a Node.js service and AWS.",
+    image: "/images/project-errand.jpg",
+    imageAlt: "Pencil sketch of a laptop and phone playing protected video with padlocks, beside a graduation cap and notebooks.",
+    facts: [
+      { value: "3", label: "surfaces: web, Android, iOS" },
+      { value: "DRM", label: "protected video, VdoCipher" },
+      { value: "AWS", label: "cloud deployment" },
+      { value: "Node.js", label: "backend integration" },
+    ],
+    built: [
+      "A unified web and mobile experience in React.js and React Native.",
+      "DRM-protected video delivery through VdoCipher.",
+      "Backend integration in Node.js.",
+      "Cloud deployment on AWS.",
+    ],
+    investigations: [
+      {
+        question: "Why does even a small platform worry about bandwidth?",
+        body: "The client wanted to restrict video replays to keep bandwidth under control. That made me wonder how YouTube stores and serves video at its scale, which I followed up in a field note.",
+      },
+    ],
+    stack: ["React.js", "React Native", "Node.js", "VdoCipher", "AWS"],
+    links: [],
+    note: { label: "Field note: how YouTube stores the world's video", href: "/journal#youtube" },
+  },
+  {
+    slug: "dentoji",
+    number: "06",
+    name: "Dentoji",
+    kind: "Web · Healthcare · Dashboard",
+    category: "web",
+    context: "Technoji Global · 2025 to 2026",
+    status: "Live",
+    summary: "A dental clinic management platform with role-based workflows and dashboard metrics.",
+    intro:
+      "Dentoji manages the day-to-day of a dental clinic: patients, the roles that touch them, and the metrics that show how the clinic is doing. It is live and deployed on the cloud.",
+    image: "/images/project-dentoji.jpg",
+    imageAlt: "Pencil sketch of a tooth, a laptop dashboard with charts, a clipboard checklist and a calendar.",
+    facts: [
+      { value: "Roles", label: "role-based workflows" },
+      { value: "Dashboard", label: "clinic metrics" },
+      { value: "AWS", label: "cloud deployment" },
+      { value: "React · Node · Mongo", label: "the stack" },
+    ],
+    built: [
+      "Patient management.",
+      "Role-based workflows.",
+      "Dashboard metrics.",
+      "Cloud deployment on AWS.",
+    ],
+    investigations: [],
+    stack: ["React.js", "Node.js", "MongoDB", "AWS"],
+    links: [],
+  },
+  {
+    slug: "zunozyra-b-tea",
+    number: "07",
+    name: "Zunozyra & B-Tea",
+    kind: "Web · E-commerce · Shipping",
+    category: "web",
+    context: "Client projects · Technoji Global",
+    status: "In production",
+    summary: "Two e-commerce platforms: carts, orders, authentication and shipment integration.",
+    intro:
+      "Zunozyra and B-Tea are e-commerce platforms built as client projects. They cover shopping, order management and authentication, and went to production.",
+    image: "/images/project-commerce.jpg",
+    imageAlt: "Pencil sketch of a folded shirt, a shopping bag, a parcel with a tag and a delivery van on a dotted route to a house.",
+    facts: [
+      { value: "Cart", label: "shopping workflow" },
+      { value: "Orders", label: "order management" },
+      { value: "Auth", label: "authentication" },
+      { value: "Shiprocket", label: "shipment integration" },
+    ],
+    built: [
+      "Cart and checkout workflows.",
+      "Order management.",
+      "Authentication.",
+      "Shipment and delivery integration where the project needed it.",
+      "Production deployment.",
+    ],
+    investigations: [
+      {
+        question: "How does an order become a shipment?",
+        body: "Paying is not the end of an order. It has to be picked up, tracked and delivered. For Zunozyra I investigated Shiprocket, a shipping platform that connects sellers with courier partners, to meet the shipment and delivery requirements.",
+      },
+    ],
+    stack: ["React.js", "Node.js", "MongoDB", "Shiprocket"],
+    links: [],
+  },
+  {
+    slug: "youtube-video-rating",
+    number: "08",
+    name: "YouTube Video Rating",
+    kind: "NLP · Machine learning · BERT",
+    category: "ai",
+    context: "NLP project · Python",
+    status: "Built and working",
+    summary: "BERT-based sentiment analysis that turns YouTube comments into an overall video rating.",
+    intro:
+      "A Python NLP system that reads YouTube comments, classifies the sentiment of each one with BERT-based models, and rolls the results up into an overall rating for the video.",
+    image: "/images/project-bert.jpg",
+    imageAlt: "Pencil sketch of three speech bubbles with sentiment faces, a star rating, a bar chart and a video player.",
+    facts: [
+      { value: "BERT", label: "model family" },
+      { value: "Multi-class", label: "sentiment categories" },
+      { value: "Python", label: "implementation" },
+    ],
+    built: [
+      "BERT-based models that classify YouTube comments into multiple sentiment categories.",
+      "Multi-class text classification to analyse audience sentiment.",
+      "An overall video rating generated from the sentiment of the comments.",
+    ],
+    investigations: [],
+    stack: ["Python", "BERT", "NLP", "Text classification"],
+    links: [],
+  },
+  {
+    slug: "doctor-appointment-booking",
+    number: "09",
+    name: "Doctor Appointment Booking",
+    kind: "Web · MERN · Healthcare",
+    category: "web",
+    context: "MERN project",
+    status: "Deployed on Vercel and Render",
+    summary: "A role-based healthcare booking platform with Admin, Doctor and Patient workflows.",
+    intro:
+      "A MERN-stack booking platform for healthcare. Admins, doctors and patients each get their own workflow, and patients book real appointment slots.",
+    image: "/images/project-doctor.jpg",
+    imageAlt: "Pencil sketch of a desk calendar with a highlighted slot, a stethoscope, three role badges and a booking screen.",
+    facts: [
+      { value: "3", label: "roles: Admin, Doctor, Patient" },
+      { value: "JWT", label: "authentication" },
+      { value: "Live", label: "slot booking" },
+      { value: "Tailwind", label: "responsive UI" },
+    ],
+    built: [
+      "Role-based Admin, Doctor and Patient workflows.",
+      "JWT authentication.",
+      "Real-time appointment slot booking.",
+      "A responsive UI built with Tailwind CSS.",
+    ],
+    investigations: [],
+    stack: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "JWT", "Vercel", "Render"],
+    links: [{ label: "Source on GitHub", href: "https://github.com/sigatapujahnavi/Doctor_appointment" }],
+  },
+];
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getNeighbours(slug: string) {
+  const index = projects.findIndex((project) => project.slug === slug);
+  return {
+    previous: index > 0 ? projects[index - 1] : projects[projects.length - 1],
+    next: index < projects.length - 1 ? projects[index + 1] : projects[0],
+  };
+}
